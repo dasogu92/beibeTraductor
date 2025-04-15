@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>beibiTraductor</title>
+  <title>BeibiTraductor</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -70,7 +70,7 @@
   </style>
 </head>
 <body>
-  <h1>🎙️ BeibiTraductor</h1>
+  <h1>🎙️ BeibiTraductor </h1>
 
   <div class="tabs">
     <button class="tab-btn active" onclick="mostrarTab('animal')">🐶👶 a 🧍</button>
@@ -95,7 +95,7 @@
       <option value="perro">🐶 Perro</option>
       <option value="bebe">👶 Bebé</option>
     </select>
-    <button onclick="traducirHumano()">🎤 Hablar y traducir</button>
+    <button onclick="simularGrabacionHumano()">🎤 Hablar y traducir</button>
     <button onclick="hablar('resultado-humano', 'modo')">🗣️ Hablar</button>
     <div id="resultado-humano" class="bubble">Decí algo y te lo traducimos 🐶👶</div>
   </div>
@@ -135,7 +135,16 @@
 
       setTimeout(() => {
         traducir();
-      }, 3000); // Espera 3 segundos antes de traducir
+      }, 3000);
+    }
+
+    function simularGrabacionHumano() {
+      const resultado = document.getElementById('resultado-humano');
+      resultado.textContent = "Escuchando... 🎤";
+
+      setTimeout(() => {
+        traducirHumano();
+      }, 3000);
     }
 
     function otraFrase() {
